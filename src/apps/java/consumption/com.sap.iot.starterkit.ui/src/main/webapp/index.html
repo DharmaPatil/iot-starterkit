@@ -191,7 +191,7 @@
 		return new sap.viz.ui5.controls.common.feeds.FeedItem({
 			"uid" : "primaryValues",
 			"type" : "Measure",
-			"values" : [ "Slider Value" ]
+			"values" : [ "Temperature" ]
 		});
 	}
 
@@ -202,8 +202,8 @@
 				value : "{sensor>G_CREATED}"
 			} ],
 			measures : [ {
-				name : "Slider Value",
-				value : "{sensor>C_VALUE}"
+				name : "Temperature",
+				value : "{sensor>C_TEMPERATURE}"
 			} ],
 			data : {
 				path : "sensor>/"
@@ -321,13 +321,14 @@
 					subHeader : new sap.m.Toolbar({
 						content : [ oLabel ]
 					}),
-					content : [ createVizFrame(), createList() ]
+//					content : [ createVizFrame(), createList() ]
+					content : [ createVizFrame() ]
 				});
 		oPage.setModel(new sap.ui.model.json.JSONModel(), "sensor");
 		var oSettingsModel = new sap.ui.model.json.JSONModel();
 		oSettingsModel.setData({
-			"deviceId" : "1",
-			"deviceTypeId" : "2",
+			"deviceId" : "51a6bc16-79ba-497e-9632-f976067360da",
+			"deviceTypeId" : "2a877eada3d2c8557f07",
 			"fromDeviceMessageTypeId" : "1",
 			"toDeviceMessageTypeId" : "2",
 		});
